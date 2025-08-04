@@ -14,7 +14,8 @@ apps = [
 
 local_installers = [
     ("Assinador Serpro", "AssinadorSERPRO4.2.1.exe", "/S"),
-    ("Danfe View", "nInstalador.exe", "/silent"),
+    ("Questor", "nInstalador.exe", "/silent"),
+    ("Office", "installer.exe", "/silent"),
 ]
 
 def instalar_apps():
@@ -25,13 +26,13 @@ def instalar_apps():
 
 def instalar_exes_locais():
     for nome, arquivo, parametro in local_installers:
-        caminho = os.path.join(os.path.dirname(__file__), arquivo)
+        caminho = os.path.join(os.path.dirname(__file__), "installer", arquivo)
         if os.path.exists(caminho):
             print(f"Instalando {nome}...")
             subprocess.run([caminho, parametro], check=True)
             print(f"{nome} instalado.")
         else:
-            print(f"⚠️ Arquivo {arquivo} não encontrado!")
+            print(f"⚠️ Arquivo {arquivo} não encontrado na pasta 'installer'!")
 
 def criar_pastas():
     pastas = ["Projetos", "GitHub", "Ferramentas"]
@@ -44,4 +45,8 @@ if __name__ == "__main__":
     instalar_apps()
     criar_pastas()
     instalar_exes_locais()
-    print("\nConfiguração concluída! Reinicie o computador se necessário.")
+    
+    print("\n✅ Configuração concluída! Reinicie o computador se necessário.")
+    input("\nPressione Enter para fechar...")
+
+# Altere os aplicativos para o qual você deseja instalar no seu computador.
