@@ -31,7 +31,7 @@ def instalar_exes_locais():
             subprocess.run([caminho, parametro], check=True)
             print(f"{nome} instalado.")
         else:
-            print(f"⚠️ Arquivo {arquivo} não encontrado na pasta 'installer'!")
+            print(f"Arquivo {arquivo} não encontrado na pasta 'installer'!")
 
 def criar_pastas():
     pastas = ["Projetos", "GitHub", "Ferramentas"]
@@ -45,7 +45,9 @@ if __name__ == "__main__":
     criar_pastas()
     instalar_exes_locais()
     
-    print("\n✅ Configuração concluída! Reinicie o computador se necessário.")
+    print("\nConfiguração concluída! Reinicie o computador se necessário.")
     input("\nPressione Enter para fechar...")
 
 # Altere os aplicativos para o qual você deseja instalar no seu computador.
+# Certifique-se de que os arquivos .exe estejam na pasta 'installer' no mesmo diretório deste script.
+# Caso queira adicionar aplicativos via winget, adicione na lista 'apps' no formato ("Nome do App", "Comando winget").
