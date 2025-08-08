@@ -51,3 +51,4 @@ if __name__ == "__main__":
 # Altere os aplicativos para o qual você deseja instalar no seu computador.
 # Certifique-se de que os arquivos .exe estejam na pasta 'installer' no mesmo diretório deste script.
 # Caso queira adicionar aplicativos via winget, adicione na lista 'apps' no formato ("Nome do App", "Comando winget").
+# Certifique-se de que o winget esteja instalado e configurado corretamente no seu sistema.
